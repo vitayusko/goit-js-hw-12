@@ -23,3 +23,146 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+
+
+
+/* /////////////////////////////// */
+
+section {
+  width: 1200px;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .....................FORM.............................. */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+}
+
+.search-input {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  border-color: #808080;
+  background: #FFF;
+  padding: 8px 16px;
+  color: #808080;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0.02 em;
+}
+
+.search-btn {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.50;
+  letter-spacing: 0.02em;
+  border: none;
+}
+
+
+/* .................................................................................. */
+
+.gallery {
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 24px;
+}
+
+.gallery-item {
+  width: calc((100% - 16px*2) / 3);
+}
+
+.item-info {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+}
+
+.gallery-item {
+  border: 1px solid #808080;
+}
+
+h3 {
+  color: #2E2F42;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: #2E2F42;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+
+.is-hiden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.load-more {
+  display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #4E75FF;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.50;
+    letter-spacing: 0.02em;
+    border: none;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -6,15 +6,20 @@ const gallery = new SimpleLightbox('.gallery a', {
     captionDelay: 300,
 });
 
-export function renderImages(images) {
+export function renderImages(images, isFirstPage) {
     const galleryElement = document.querySelector('.js-gallery-list');
-    galleryElement.innerHTML = '';
-    if (images.length === 0) {
+    
+    if (isFirstPage) {
+        galleryElement.innerHTML = '';
+    }
+
+    if (images.length === 0 && isFirstPage) {
         iziToast.error({
             message: 'Sorry, there are no images matching your search. Please try again!',
         });
         return;
     }
+    
     const galleryHtml = images
         .map(img => {
             return `
@@ -32,10 +37,15 @@ export function renderImages(images) {
             `;
         })
         .join('');
-    galleryElement.innerHTML = galleryHtml;
+
+    galleryElement.insertAdjacentHTML('beforeend', galleryHtml);
 
     gallery.refresh();
 }
+
+
+
+
 
 
 

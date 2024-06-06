@@ -1,3 +1,4 @@
+
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
@@ -17,7 +18,7 @@ let query = '';
 
 const handleClick = () => {
   page += 1;
-  getImages(page);
+  getImages(page, false);
 };
 
 buttonmore.addEventListener('click', handleClick);
@@ -37,18 +38,19 @@ form.addEventListener('submit', async event => {
 
   galleryElement.innerHTML = '';
   page = 1;
-  getImages(page);
+  getImages(page, true);
   form.reset();
 });
 
-const getImages = async page => {
+const getImages = async (page, isFirstPage) => {
   try {
     loader.style.display = 'block';
     buttonmore.classList.add('is-hiden');
     const response = await getPhotos(query, page);
     const images = response.data.hits;
 
-    await renderImages(images);
+    renderImages(images, isFirstPage);
+
     if (page > 1) {
       galleryScroll();
     }
